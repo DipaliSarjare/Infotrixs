@@ -38,7 +38,7 @@ public class Main {
 	                    scanner.nextLine();
 
 	                    System.out.print("Enter Employee Address: ");
-	                    String city = scanner.nextLine();
+	                    String address = scanner.nextLine();
 
 	                    System.out.print("Enter Employee Salary: ");
 	                    double salary = scanner.nextDouble();
@@ -47,7 +47,7 @@ public class Main {
 	                    System.out.print("Enter Employee Designation: ");
 	                    String designation = scanner.nextLine();
 
-	                    Employee employee = new Employee(id, name, age, city, salary, designation);
+	                    Employee employee = new Employee(id, name, age, address, salary, designation);
 	                    managementSystem.addEmployee(employee);
 	                    break;
 	                case 2:
@@ -71,8 +71,8 @@ public class Main {
 	                    int newAge = scanner.nextInt();
 	                    scanner.nextLine();
 
-	                    System.out.print("Enter new Employee City: ");
-	                    String newCity = scanner.nextLine();
+	                    System.out.print("Enter new Employee Address: ");
+	                    String newAddress = scanner.nextLine();
 
 	                    System.out.print("Enter new Employee Salary: ");
 	                    double newSalary = scanner.nextDouble();
@@ -81,7 +81,7 @@ public class Main {
 	                    System.out.print("Enter new Employee Designation: ");
 	                    String newDesignation = scanner.nextLine();
 
-	                    Employee updatedEmployee = new Employee(updateId, newName, newAge, newCity, newSalary, newDesignation);
+	                    Employee updatedEmployee = new Employee(updateId, newName, newAge, newAddress, newSalary, newDesignation);
 	                    managementSystem.updateEmployeeDetails(updateId, updatedEmployee);
 	                    break;
 	                case 5:
