@@ -51,7 +51,11 @@ public class Main {
 	                    managementSystem.addEmployee(employee);
 	                    break;
 	                case 2:
+	                  try {
 	                    managementSystem.viewAllEmployees();
+	                    } catch (EmployeeException e) {
+	                        System.out.println("Error: " + e.getMessage());
+	                    }
 	                    break;
 	                case 3:
 	                    System.out.print("Enter Employee ID to delete: ");
