@@ -1,2 +1,2 @@
-1,Dipali,28,Gondia,40000.0,Java Developer
-2,Sonal,24,Bhandara,30000.0,java devloper
+1,rita,23,raipur,24000.0,intern
+2,Dipali,28,Gondia,35000.0,java developer

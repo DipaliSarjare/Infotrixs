@@ -1,0 +1,24 @@
+package com.Ems.DBUtil;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import com.Ems.Model.Employee;
+
+public class DataStore {
+
+
+    public void storeDataToFile() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("employees.txt"))) {
+            Employee[] emp = null;
+			for (Employee employee : emp) {
+                writer.println(employee.toFormattedString());
+            }
+            System.out.println("Employee data stored in the file successfully!");
+        } catch (IOException e) {
+            System.out.println("An error occurred while storing employee data to the file.");
+            e.printStackTrace();
+        }
+    }
+}

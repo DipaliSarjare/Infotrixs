@@ -1,0 +1,34 @@
+package com.Ems.Dao;
+
+import java.util.Collection;
+import java.util.List;
+
+import com.Ems.Model.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao{
+
+	@Override
+	public String addEmployee(Employee emp) {
+		Collection conn=DBUtil.DataStore();
+		return null;
+	}
+
+	@Override
+	public String updateEmployeeDetails(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> viewEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteEmployeeById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

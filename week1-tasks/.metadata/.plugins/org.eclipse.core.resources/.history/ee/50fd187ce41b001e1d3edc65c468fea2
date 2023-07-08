@@ -1,0 +1,14 @@
+package com.Ems.Dao;
+
+import java.util.List;
+
+import com.Ems.Model.Employee;
+
+public interface EmployeeDao {
+
+	public String addEmployee(Employee emp);
+	public String updateEmployeeDetails(int id);
+	public List<Employee> viewEmployees();
+	public String deleteEmployeeById(int id);
+	
+}

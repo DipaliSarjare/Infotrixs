@@ -17,16 +17,29 @@ public class EmployeeManagementSystem {
         employees = dataAccess.getAllEmployees();
     }
 
-    public void addEmployee(Employee employee) {
+
+    public boolean isEmployeeIdExists(int id) {
+        for (Employee employee : employees) {
+            if (employee.getId() == id) {
+                return true; // ID already exists
+            }
+        }
+        return false; // ID does not exist
+    }
+
+    public void addEmployee(Employee employee) throws EmployeeException {
+        if (isEmployeeIdExists(employee.getId())) {
+            throw new EmployeeException("Duplicate ID is not allowed.");
+        }
+        
         employees.add(employee);
         dataAccess.saveAllEmployees(employees);
         System.out.println("Employee added successfully!");
-        
     }
-
+    
     public void viewAllEmployees() throws EmployeeException {
         if (employees.isEmpty()) {
-//            System.out.println("No employees found.");
+
         	throw new EmployeeException("No employees found.");
         } else {
             for (Employee employee : employees) {

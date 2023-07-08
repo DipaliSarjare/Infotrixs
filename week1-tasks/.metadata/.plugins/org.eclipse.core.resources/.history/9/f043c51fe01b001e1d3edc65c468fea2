@@ -1,0 +1,5 @@
+package com.Ems.Dao;
+
+public interface EmployeeDaoImpl {
+
+}

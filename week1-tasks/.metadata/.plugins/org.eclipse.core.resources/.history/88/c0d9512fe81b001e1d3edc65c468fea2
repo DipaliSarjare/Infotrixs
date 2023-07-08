@@ -1,0 +1,5 @@
+package com.Ems.Exception;
+
+public class EmployeeException {
+
+}

@@ -1,0 +1,74 @@
+package com.Ems.Model;
+
+public class Employee {
+    private int id;
+    private String name;
+    private int age;
+    private String address;
+    private double salary;
+    private String designation;
+
+    public Employee(int id, String name, int age, String address, double salary, String designation) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.salary = salary;
+        this.designation = designation;
+    }
+
+    // Getters and setters
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    // ToString method
+
+    @Override
+    public String toString() {
+        return "Employee [id=" + id + "\n"+ " name=" + name + ", age=" + age + ", address=" + address + ", salary=" + salary
+                + ", designation=" + designation + "]";
+    }
+}
+

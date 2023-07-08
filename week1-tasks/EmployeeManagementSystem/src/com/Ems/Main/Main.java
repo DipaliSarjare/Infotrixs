@@ -1,5 +1,7 @@
 package com.Ems.Main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.Ems.Dao.EmployeeManagementSystem;
@@ -8,6 +10,7 @@ import com.Ems.Model.Employee;
 
 public class Main {
 	 public static void main(String[] args) throws EmployeeException {
+		
 	        Scanner scanner = new Scanner(System.in);
 	        EmployeeManagementSystem managementSystem = new EmployeeManagementSystem("employee.txt");
 
@@ -29,30 +32,40 @@ public class Main {
 	                    System.out.print("Enter Employee ID: ");
 	                    int id = scanner.nextInt();
 	                    scanner.nextLine();
+	                    try {
+	                    	if (managementSystem.isEmployeeIdExists(id)) {
+	                        throw new EmployeeException("Duplicate ID is not allowed.");
+	                    }
+	                    	System.out.print("Enter Employee Name: ");
+		                    String name = scanner.nextLine();
 
-	                    System.out.print("Enter Employee Name: ");
-	                    String name = scanner.nextLine();
+		                    System.out.print("Enter Employee Age: ");
+		                    int age = scanner.nextInt();
+		                    scanner.nextLine();
 
-	                    System.out.print("Enter Employee Age: ");
-	                    int age = scanner.nextInt();
-	                    scanner.nextLine();
+		                    System.out.print("Enter Employee Address: ");
+		                    String address = scanner.nextLine();
 
-	                    System.out.print("Enter Employee Address: ");
-	                    String address = scanner.nextLine();
+		                    System.out.print("Enter Employee Salary: ");
+		                    double salary = scanner.nextDouble();
+		                    scanner.nextLine();
 
-	                    System.out.print("Enter Employee Salary: ");
-	                    double salary = scanner.nextDouble();
-	                    scanner.nextLine();
-
-	                    System.out.print("Enter Employee Designation: ");
-	                    String designation = scanner.nextLine();
-
-	                    Employee employee = new Employee(id, name, age, address, salary, designation);
-	                    managementSystem.addEmployee(employee);
-	                    break;
+		                    System.out.print("Enter Employee Designation: ");
+		                    String designation = scanner.nextLine();
+	                        
+		                    Employee employee = new Employee(id, name, age, address, salary, designation);
+		                    
+		                    managementSystem.addEmployee(employee);
+							
+						} catch (Exception e) {
+							System.out.println("Error: " + e.getMessage());
+						}
+	                
+                        break;
+	            
 	                case 2:
-	                  try {
-	                    managementSystem.viewAllEmployees();
+	                	try {
+	                		 managementSystem.viewAllEmployees();
 	                    } catch (EmployeeException e) {
 	                        System.out.println("Error: " + e.getMessage());
 	                    }
